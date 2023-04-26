@@ -1,11 +1,19 @@
 variable "resource_group_name" {
-    default = "RG_ADE"
+    default = "rg_ade"
 }
 
 variable "virtual_network_name" {
-    default = "VN_ADE"
+    default = "vn_ade"
 }
 
 variable "virtual_network_location" {
     default = "westus2"
+}
+
+variable "sqldb_service_tier" {
+    default = "S0"
+}
+
+variable "sqldb_max_size" {
+    default = "250"
 }
