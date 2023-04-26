@@ -43,7 +43,7 @@ resource "azurerm_virtual_network" "vnet" {
 
 # Create a Azure SQL DB Server
 resource "azurerm_mssql_server" "sqlserver" {
-  name                         = "salesdb_server_ade"
+  name                         = "salesdb-server-ade"
   resource_group_name          = azurerm_resource_group.rg.name
   location                     = var.virtual_network_location
   version                      = "12.0"
@@ -59,7 +59,7 @@ resource "azurerm_mssql_server" "sqlserver" {
 
 # Create a Azure SQL DB database
 resource "azurerm_mssql_database" "sqldb" {
-  name                         = "salesdb_ade"
+  name                         = "salesdb-ade"
   resource_group_name          = azurerm_resource_group.rg.name
   server_id                    = azurerm_mssql_server.sqlserver.id
   collation                    = "SQL_Latin1_General_CP1_CI_AS"
