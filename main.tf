@@ -68,7 +68,7 @@ resource "azurerm_mssql_database" "sqldb" {
   max_size_gb                  = var.sqldb_max_size
   read_scale                   = true
   sku_name                     = var.sqldb_service_tier
-  zone_redundant               = true
+#  zone_redundant               = true
 
   depends_on = [azurerm_resource_group.rg, azurerm_mssql_server.sqlserver]
 
