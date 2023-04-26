@@ -9,12 +9,12 @@ terraform {
 
   required_version = ">= 1.1.0"
 
-  cloud {
+/*   cloud {
     organization = "Data-Engineering-and-Data-Analytics"
     workspaces {
       name = "terraform-data-engineering-with-apache-spark-deltalake-and-lakehouse"
     }
-  }
+  } */
 }
 
 provider "azurerm" {
