@@ -34,12 +34,12 @@ resource "azurerm_resource_group" "rg" {
 }
 
 # Create a Virtual Network
-resource "azurerm_virtual_network" "vnet" {
+/* resource "azurerm_virtual_network" "vnet" {
   name                = var.virtual_network_name
   address_space       = ["10.0.0.0/16"]
   location            = var.region
   resource_group_name = azurerm_resource_group.rg.name
-}
+} */
 
 # Create a Azure SQL DB Server
 resource "azurerm_mssql_server" "sqlserver" {
@@ -50,6 +50,8 @@ resource "azurerm_mssql_server" "sqlserver" {
   administrator_login          = "training_admin"
   administrator_login_password = "scotT123$$"
   minimum_tls_version          = "1.2"
+
+  depends_on = [azurerm_resource_group.rg]
 
   tags = {
     Environment = "Development"
@@ -67,6 +69,8 @@ resource "azurerm_mssql_database" "sqldb" {
   read_scale                   = true
   sku_name                     = var.sqldb_service_tier
   zone_redundant               = true
+
+  depends_on = [azurerm_resource_group.rg, azurerm_mssql_server.sqlserver]
 
   tags = {
     Environment = "Development"

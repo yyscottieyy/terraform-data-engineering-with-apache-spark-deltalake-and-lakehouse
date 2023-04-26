@@ -7,7 +7,7 @@ variable "virtual_network_name" {
 }
 
 variable "region" {
-    default = "East US"
+    default = "eastus"
 }
 
 variable "sqldb_service_tier" {
