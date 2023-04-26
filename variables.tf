@@ -6,8 +6,8 @@ variable "virtual_network_name" {
     default = "vn_ade"
 }
 
-variable "virtual_network_location" {
-    default = "westus2"
+variable "region" {
+    default = "East US"
 }
 
 variable "sqldb_service_tier" {
