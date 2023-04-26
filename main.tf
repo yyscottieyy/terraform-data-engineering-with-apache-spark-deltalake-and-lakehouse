@@ -60,7 +60,6 @@ resource "azurerm_mssql_server" "sqlserver" {
 # Create a Azure SQL DB database
 resource "azurerm_mssql_database" "sqldb" {
   name                         = "salesdb-ade"
-  resource_group_name          = azurerm_resource_group.rg.name
   server_id                    = azurerm_mssql_server.sqlserver.id
   collation                    = "SQL_Latin1_General_CP1_CI_AS"
   license_type                 = "LicenseIncluded"
